@@ -1,192 +1,35 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Yvonne&#039;s Diary</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Yvonne&#039;s Diary"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Yvonne&#039;s Diary"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="WISH ME GOOD LUCK!"><meta property="og:type" content="blog"><meta property="og:title" content="Yvonne&#039;s Diary"><meta property="og:url" content="http://example.com/"><meta property="og:site_name" content="Yvonne&#039;s Diary"><meta property="og:description" content="WISH ME GOOD LUCK!"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:author" content="Yvonne"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com"},"headline":"Yvonne's Diary","image":["http://example.com/img/og_image.png"],"author":{"@type":"Person","name":"Yvonne"},"publisher":{"@type":"Organization","name":"Yvonne's Diary","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":"WISH ME GOOD LUCK!"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
 
-<link rel="stylesheet" href="/css/main.css">
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
 
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="WISH ME GOOD LUCK!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yvonne&#39;s Diary">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Yvonne&#39;s Diary">
-<meta property="og:description" content="WISH ME GOOD LUCK!">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Yvonne">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://example.com/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>Yvonne's Diary</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Yvonne's Diary</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/28/%E4%BB%8A%E6%97%A5%E6%83%B3%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yvonne">
-      <meta itemprop="description" content="WISH ME GOOD LUCK!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yvonne's Diary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/28/%E4%BB%8A%E6%97%A5%E6%83%B3%E6%B3%95/" class="post-title-link" itemprop="url">今日想法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-05-28 21:56:58 / 修改时间：22:35:39" itemprop="dateCreated datePublished" datetime="2025-05-28T21:56:58+08:00">2025-05-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>总是在听优秀的人说一些“幸福的烦恼”，我真的无话可说，因为我真的一无所有。</p>
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Yvonne&#039;s Diary" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-05-28T13:56:58.000Z" title="5/28/2025, 9:56:58 PM">2025-05-28</time>发表</span><span class="level-item"><time dateTime="2025-05-28T14:35:39.410Z" title="5/28/2025, 10:35:39 PM">2025-05-28</time>更新</span><span class="level-item">2 分钟读完 (大约236个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/05/28/%E4%BB%8A%E6%97%A5%E6%83%B3%E6%B3%95/">今日想法</a></p><div class="content"><p>总是在听优秀的人说一些“幸福的烦恼”，我真的无话可说，因为我真的一无所有。</p>
 <p>太废了，没有实习，科研也做得很烂。生活能力也不足够。</p>
 <p>希望顺利毕业，求求了，老天爷老天奶。</p>
 <p>不想做PPT，唉，明明还有一堆事情没搞好，整个一个废的状态，却什么也不想做，好累，也没睡好，又开始逃避了，好吧，那就明天是新的开始。</p>
@@ -197,254 +40,22 @@
 <p>捡起来毛笔练习。</p>
 <p>多思考。</p>
 <p>累了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/28/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yvonne">
-      <meta itemprop="description" content="WISH ME GOOD LUCK!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yvonne's Diary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/28/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">使用方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-05-28 21:46:15 / 修改时间：21:52:14" itemprop="dateCreated datePublished" datetime="2025-05-28T21:46:15+08:00">2025-05-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-05-28T13:46:15.000Z" title="5/28/2025, 9:46:15 PM">2025-05-28</time>发表</span><span class="level-item"><time dateTime="2025-05-28T13:52:14.413Z" title="5/28/2025, 9:52:14 PM">2025-05-28</time>更新</span><span class="level-item">几秒读完 (大约73个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/05/28/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">使用方法</a></p><div class="content"><blockquote>
 <p>记录一下部署个人博客以及后续书写撰写的方法，希望能够坚持下去。</p>
 </blockquote>
 <h1 id="撰写博客"><a href="#撰写博客" class="headerlink" title="撰写博客"></a>撰写博客</h1><ol start="0">
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">参考链接</a></li>
 <li>找到blog所在文件夹-source-posts，在该文件夹下打开<code>git bash</code>: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;标题&quot;</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/01/%E6%84%9F%E6%83%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yvonne">
-      <meta itemprop="description" content="WISH ME GOOD LUCK!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yvonne's Diary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/03/01/%E6%84%9F%E6%83%B3/" class="post-title-link" itemprop="url">感想</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-03-01 15:53:29 / 修改时间：23:53:33" itemprop="dateCreated datePublished" datetime="2025-03-01T15:53:29+08:00">2025-03-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天仍然是晚起了，睡到自然醒，看到了有人在群里感慨，才恍惚今天是三月第一天，二月也过去了，我怎么还是什么都没做好呢？</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-03-01T07:53:29.000Z" title="3/1/2025, 3:53:29 PM">2025-03-01</time>发表</span><span class="level-item"><time dateTime="2025-03-01T15:53:33.496Z" title="3/1/2025, 11:53:33 PM">2025-03-01</time>更新</span><span class="level-item">6 分钟读完 (大约851个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/03/01/%E6%84%9F%E6%83%B3/">感想</a></p><div class="content"><p>今天仍然是晚起了，睡到自然醒，看到了有人在群里感慨，才恍惚今天是三月第一天，二月也过去了，我怎么还是什么都没做好呢？</p>
 <p>中午吃完饭，和同学溜了一圈，发现好多花儿都开了，春天来了啊。拍了照，然后刷手机，突然就看到了方大同去世的消息。<br>第一反应是不可思议，怎么会有这种假消息出现。有些了解方大同还是因为R&amp;B，应该是24年年初寒假期间，B站陶喆抽象视频涌现，<br>无意中点开了一个音乐电台UP主关于陶喆-华语R&amp;B教父的视频，还挺有感触的，不过也没想起来到底介绍了什么内容，于是找到陶喆的歌曲去听，包括经典的<br>soulpower演唱会，确实很对我的胃口，在这个过程中，肯定少不了大家对R&amp;B的评论，方大同的名字也逐渐熟悉了，说实话，我不懂什么乐理知识，陶喆歌曲吸引我<br>更多还是他的音色——我感觉自己喜欢可能频率高的，吐字清晰，明亮的音色，以及他的节奏感很能调动情绪，关于曲我是一窍不通的。我也尝试了听了方大同的<br>歌曲，他的音色比较沙哑，不太戳我这种完全凭情绪的人，但是我也欣赏不了他的曲的高深，我只是感觉，大家都肯定，许多歌手都肯定，而且唱的不是那种我一听就讨厌的<br>所谓流行的腔调，那么就等我慢慢知道一些音乐知识再去品味吧。</p>
 <p>之后就有听说他发了新专辑，但是大家评价不好，但是我也没听。今天得知他过失的消息，其实我是很不可思议，也很惋惜，毕竟那么年轻，那么有才华。<br>我打开B站，看到大家缅怀的，震惊的，悲伤的动态不停的出现。在评论区看到了有人推荐B站UP主周扬采访方大同的视频，我就去看了，唉，里面的人<br>真的太瘦弱，憔悴了，声音像是有刺在冒出来，感觉呼吸不过来似的，不知是否是今天得知斯人已逝，看到这个视频，我感觉这像是告别的预告。<br>我也听了新的专辑，平稳不了的气息，沙哑，中断的气息代替唱不了的高音，真的像用最后的气力给自己的音乐梦想写一首终曲，写一封离别信。不可否认，<br>声音质量影响了观感，可是我以今天的信息，仿佛有上帝视角在看，会觉得这些瑕疵是更深层次的故事，说实话，太让人心疼了。生死真的是跨越阶级的苦难。R.I.P.</p>
 <p>我伸出了手，你觉得是我要来，只有我知道，我在告别。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/28/CLine%E8%AF%95%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yvonne">
-      <meta itemprop="description" content="WISH ME GOOD LUCK!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yvonne's Diary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/02/28/CLine%E8%AF%95%E7%94%A8/" class="post-title-link" itemprop="url">CLine试用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-02-28 15:03:42 / 修改时间：15:57:27" itemprop="dateCreated datePublished" datetime="2025-02-28T15:03:42+08:00">2025-02-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>实在是迷茫并且没有动力啊，想着尝试买个deepseek api看看怎么辅助编写代码，于是买了20块钱的api。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-02-28T07:03:42.000Z" title="2/28/2025, 3:03:42 PM">2025-02-28</time>发表</span><span class="level-item"><time dateTime="2025-02-28T07:57:27.688Z" title="2/28/2025, 3:57:27 PM">2025-02-28</time>更新</span><span class="level-item">2 分钟读完 (大约259个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/02/28/CLine%E8%AF%95%E7%94%A8/">CLine试用</a></p><div class="content"><p>实在是迷茫并且没有动力啊，想着尝试买个deepseek api看看怎么辅助编写代码，于是买了20块钱的api。</p>
 <p>使用VSCode的CLine插件，这个就完全无脑下载，看着设置就行，但是这个没办法设置模型的Temperature参数。然后使用CLine输入指令：请用python写一个贪吃蛇小游戏，最后程序写出来了，花了7分钱，请求API7次。程序一直显示pygame没有init模块，还有其他什么的，终端输入指令不能运行，但是点击右上角运行按钮可以运行。</p>
 <p>哎，为什么什么也不会。求求了，保佑我吧。</p>
 <p>发现通义灵码是免费的，但是只有用AI程序员才可以写入注释到文件，我让它注释了个ipynb文件，直接搞出来个报错<code>Unexpected token &#39;#&#39;, &quot;# 安装必要的Pyt&quot;... is not valid JSON</code> 不太行啊。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/27/VsCode-Git-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yvonne">
-      <meta itemprop="description" content="WISH ME GOOD LUCK!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yvonne's Diary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/02/27/VsCode-Git-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">VSCode+Git 源代码管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-02-27 03:27:10 / 修改时间：05:04:31" itemprop="dateCreated datePublished" datetime="2025-02-27T03:27:10+08:00">2025-02-27</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-02-26T19:27:10.000Z" title="2/27/2025, 3:27:10 AM">2025-02-27</time>发表</span><span class="level-item"><time dateTime="2025-02-26T21:04:31.372Z" title="2/27/2025, 5:04:31 AM">2025-02-27</time>更新</span><span class="level-item">1 分钟读完 (大约177个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/02/27/VsCode-Git-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/">VSCode+Git 源代码管理</a></p><div class="content"><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
 <li><p>复制Github repositories 的SSH链接。</p>
 </li>
 <li><p>打开空的VSCode，点击左侧栏-源代码管理-源代码管理-克隆仓库-粘贴<code>1</code>复制的SSH链接。等待加载后就可以打开仓库。</p>
@@ -463,65 +74,7 @@
 <li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/2301_77285173/article/details/130189857">hexo博客插入图片</a></p>
 </li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yvonne">
-      <meta itemprop="description" content="WISH ME GOOD LUCK!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yvonne's Diary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/02/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">大模型原理与技术学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-02-26 16:53:17 / 修改时间：17:00:00" itemprop="dateCreated datePublished" datetime="2025-02-26T16:53:17+08:00">2025-02-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="语言模型的发展历史"><a href="#语言模型的发展历史" class="headerlink" title="语言模型的发展历史"></a>语言模型的发展历史</h1><p><code>可能用于综述之类</code></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-02-26T08:53:17.000Z" title="2/26/2025, 4:53:17 PM">2025-02-26</time>发表</span><span class="level-item"><time dateTime="2025-02-26T09:00:00.953Z" title="2/26/2025, 5:00:00 PM">2025-02-26</time>更新</span><span class="level-item">几秒读完 (大约39个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/02/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">大模型原理与技术学习笔记</a></p><div class="content"><h1 id="语言模型的发展历史"><a href="#语言模型的发展历史" class="headerlink" title="语言模型的发展历史"></a>语言模型的发展历史</h1><p><code>可能用于综述之类</code></p>
 <ol>
 <li><p>基于规则 ELIZA(1966),n-grams(1975)</p>
 </li>
@@ -530,248 +83,52 @@
 <li><p>基于学习 GPT Bert(2018),ChatGPT(2022)</p>
 </li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/22/My_First_Post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yvonne">
-      <meta itemprop="description" content="WISH ME GOOD LUCK!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yvonne's Diary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/02/22/My_First_Post/" class="post-title-link" itemprop="url">My First Post</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-02-22 16:28:52 / 修改时间：16:49:23" itemprop="dateCreated datePublished" datetime="2025-02-22T16:28:52+08:00">2025-02-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这是我的第一篇博客。代码写不出来，看着论文，研究方向也很苦恼，完全是无从下手。面对着未知的，巨大的知识缺失，感觉焦虑，害怕，不知道怎么迈出脚步，也不敢迈出脚步。于是，在因焦虑紧张而失眠的夜晚里在网络上面想要寻找共鸣，却愈发绝望，痛恨自己荒废的过去几年，临近毕业关卡，恍然发觉什么都没有学到，只是又陷入坏情绪的循环。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-02-22T08:28:52.000Z" title="2/22/2025, 4:28:52 PM">2025-02-22</time>发表</span><span class="level-item"><time dateTime="2025-02-22T08:49:23.266Z" title="2/22/2025, 4:49:23 PM">2025-02-22</time>更新</span><span class="level-item">3 分钟读完 (大约401个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/02/22/My_First_Post/">My First Post</a></p><div class="content"><p>这是我的第一篇博客。代码写不出来，看着论文，研究方向也很苦恼，完全是无从下手。面对着未知的，巨大的知识缺失，感觉焦虑，害怕，不知道怎么迈出脚步，也不敢迈出脚步。于是，在因焦虑紧张而失眠的夜晚里在网络上面想要寻找共鸣，却愈发绝望，痛恨自己荒废的过去几年，临近毕业关卡，恍然发觉什么都没有学到，只是又陷入坏情绪的循环。</p>
 <p>在一个备受焦虑与痛苦的晚上，无意中打开微信公众号，看到了一篇推文，然后就点进去了文末链接一位前辈的博客。前辈的个人博客顿时吸引了我，看到前辈是如何记录自己的生活的，以及心路历程，我从中感受到了我没有的力量和品格——如何规划，如何从自己出发去审视每件事的意义，以及如何做选择等等。而且我也仿佛经历了一种我没有的成长轨迹。</p>
 <p>于是，在这个我又感到焦虑而无心做事的下午，我就学习了如何通过GitHub搭建自己的个人博客，我想要之后持续记录，既然没有地基，那就重新一层层地打。</p>
 <p>加油！</p>
-<p>祝我好运，保佑我毕业顺利！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/02/22/My_First_Post/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Yvonne</p>
-  <div class="site-description" itemprop="description">WISH ME GOOD LUCK!</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">7</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2025</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Yvonne</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-</body>
-</html>
+<p>祝我好运，保佑我毕业顺利！</p></div><a class="article-more button is-small is-size-7" href="/2025/02/22/My_First_Post/#more">阅读更多</a></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives/"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories/"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags/"><p class="title">2</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-05-28T13:56:58.000Z">2025-05-28</time></p><p class="title"><a href="/2025/05/28/%E4%BB%8A%E6%97%A5%E6%83%B3%E6%B3%95/">今日想法</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-05-28T13:46:15.000Z">2025-05-28</time></p><p class="title"><a href="/2025/05/28/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">使用方法</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-03-01T07:53:29.000Z">2025-03-01</time></p><p class="title"><a href="/2025/03/01/%E6%84%9F%E6%83%B3/">感想</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-28T07:03:42.000Z">2025-02-28</time></p><p class="title"><a href="/2025/02/28/CLine%E8%AF%95%E7%94%A8/">CLine试用</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-26T19:27:10.000Z">2025-02-27</time></p><p class="title"><a href="/2025/02/27/VsCode-Git-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/">VSCode+Git 源代码管理</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/05/"><span class="level-start"><span class="level-item">五月 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/03/"><span class="level-start"><span class="level-item">三月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/02/"><span class="level-start"><span class="level-item">二月 2025</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Git-VSCode-%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"><span class="tag">Git VSCode 基本技能</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%A7%E6%A8%A1%E5%9E%8B/"><span class="tag">学习笔记 大模型</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Yvonne&#039;s Diary" height="28"></a><p class="is-size-7"><span>&copy; 2025 Yvonne</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
